@@ -1,0 +1,16 @@
+---
+kind: pipeline
+name: build
+
+platform:
+  os: linux
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:
+    repo: euronetzrt/collectd-server
+    username: rkojedzinszky
+    password:
+      from_secret: hub_docker_password
+    auto_tag: true
